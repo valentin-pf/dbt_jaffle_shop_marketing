@@ -1,0 +1,6 @@
+version: 2
+groups:
+  - name: marketing
+    owner:
+      name: Marketing Analytics
+      email: marketing@jaffle.local

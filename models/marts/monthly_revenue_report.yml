@@ -1,0 +1,7 @@
+version: 2
+models:
+  - name: monthly_revenue_report
+    description: Thin downstream model useful for cross-project lineage exercises.
+    columns:
+      - name: revenue_month
+        data_tests: [not_null, unique]

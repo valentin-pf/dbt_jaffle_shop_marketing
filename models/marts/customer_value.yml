@@ -1,0 +1,24 @@
+version: 2
+models:
+  - name: customer_value
+    description: Marketing data product consuming two upstream dbt projects.
+    config:
+      access: public
+      contract:
+        enforced: true
+    columns:
+      - name: customer_id
+        data_type: string
+        data_tests: [not_null, unique]
+      - name: customer_name
+        data_type: string
+      - name: total_revenue
+        data_type: numeric
+      - name: order_count
+        data_type: int64
+      - name: customer_segment
+        data_type: string
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['high_value', 'mid_value', 'low_value']
